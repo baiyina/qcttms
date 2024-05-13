@@ -1,0 +1,24 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: ttms
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://60.204.147.64:3306/ttms?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123
+  data:
+    redis:
+      host: 60.204.147.64
+      port: 6379
+      database: 1
+mybatis-plus:
+  configuration:
+    # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+    map-underscore-to-camel-case: false
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # mapper
+  mapper-locations:
+    # *.xml的具体路径
+    - classpath*:mapper/*.xml
